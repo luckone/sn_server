@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const db = require('./db/connection')
 const CONFIG = require('./config')
-const userController = require('./db/controllers/userController')
+const UserController = require('./db/controllers/UserController')
 const app = express();
 
 db.mongoConnection();
@@ -24,9 +24,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/', (req, res) => {
-    res.send('Server is up')
-})
+app.use('/users', UserController);
 
 const server = app.listen(CONFIG.PORT, () => {
     console.log(`Server is up on ====> ${CONFIG.PORT}`)
