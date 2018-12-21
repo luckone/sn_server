@@ -7,4 +7,8 @@ module.exports = {
         HOST: 'ds229008.mlab.com',
         PORT: '29008'
     },
+    JWT: {
+        SECRET: 'valentor3000penetrator',
+        EXPIRE: 86400,
+    },
 }
